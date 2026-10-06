@@ -31,6 +31,10 @@ Registra los roles externos que participan en las funciones representadas. Un ac
 | Usuario  | Persona que interactúa con el proyecto Simbiosis |
 | Usiario registrado | Persona que dispone de una cuenta en la plataforma |
 | Usuario no registrado | Persona que dispone de una cuenta en la plataforma y que solo tiene acceso parcial a ésta |
+| Nutricionista | Persona que publica y valida recetas en la plataforma |
+| Cuidador | Persona designada para el cuidado de  pacientes |
+| Paciente | Persona que recibe asistencia de un cuidador |
+| Coordinador | Persona que realiza tareas de moderación en la plataforma |
 
 Mantén los mismos nombres en las tablas, los diagramas y las descripciones.
 
@@ -43,9 +47,9 @@ Registra los casos que aparecen en el modelo. Asigna a cada caso un identificado
 | Identificador | Nombre | Objetivo | Participantes |
 | --- | --- | --- | --- |
 | UC-01 | Registrarse | Realizar el proceso de registro para crear una cuenta propia | Actor principal: Usuario no registrado. No se identifica actor de apoyo para este caso. |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
+| UC-02 | Solicitar perfil de nutricionista | Solicitar convertirse en nutricionista para acceder a las funciones dedicadas | Actor principal: Usuario registrado. No se identifica actor de apoyo para este caso. |
+| UC-03 |  Solicitar perfil de cuidador  | Solicitar convertirse en cuidador para acceder a las funciones dedicadas | --- |
+| UC-04 | --- | --- | --- |
 | UC-05 | Gestionar perfil | Gestionar los datos personales y preferencias de la cuenta propia | Actor principal: Usuario registrado. No se identifica actor de apoyo para este caso. |
 | UC-06 | Eliminar cuenta | Eliminar la cuenta propia | Actor principal: Usuario registrado. No se identifica actor de apoyo para este caso. |
 
