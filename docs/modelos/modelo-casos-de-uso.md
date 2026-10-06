@@ -30,6 +30,7 @@ Registra los roles externos que participan en las funciones representadas. Un ac
 | --- | --- |
 | Usuario  | Persona que interactúa con el proyecto Simbiosis |
 | Usiario registrado | Persona que dispone de una cuenta en la plataforma |
+| Usuario no registrado | Persona que dispone de una cuenta en la plataforma y que solo tiene acceso parcial a ésta |
 
 Mantén los mismos nombres en las tablas, los diagramas y las descripciones.
 
@@ -40,6 +41,10 @@ Mantén los mismos nombres en las tablas, los diagramas y las descripciones.
 Registra los casos que aparecen en el modelo. Asigna a cada caso un identificador estable. Escribe el nombre con un verbo y un objeto. Resume el objetivo sin describir todos sus pasos.
 
 | Identificador | Nombre | Objetivo | Participantes |
+| --- | --- | --- | --- |
+| UC-01 | Registrarse | Realizar el proceso de registro para crear una cuenta propia | Actor principal: Usuario no registrado. No se identifica actor de apoyo para este caso. |
+| --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | --- | --- | --- | --- |
 | UC-05 | Gestionar perfil | Gestionar los datos personales y preferencias de la cuenta propia | Actor principal: Usuario registrado. No se identifica actor de apoyo para este caso. |
 | UC-06 | Eliminar cuenta | Eliminar la cuenta propia | Actor principal: Usuario registrado. No se identifica actor de apoyo para este caso. |
@@ -99,6 +104,10 @@ Indica los UR y FR que respaldan las decisiones del modelo. Añade los NFR que c
 En E1 basta con un respaldo breve del diagrama. La tabla permite ampliar la trazabilidad después. No es necesario crear un caso independiente para cada FR o NFR.
 
 | Elemento del modelo | UR y FR de referencia | NFR pertinentes | Relación con los requisitos |
+| --- | --- | --- | --- |
+| UC-01 Registrarse | UR-01; FR-001, FR-002, FR-003, FR-004, FR-005, FR-007, FR-008, FR-009, FR-010, FR-011, FR-012, FR-013 | NFR-015 G | --- |
+| --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | --- | --- | --- | --- |
 | UC-5 Gestionar perfil | UR-03; FR-019 | NFR-010 G | FR-019 permite modificar datos personales y preferencias, pero excluye alias y correo. NFR-010 condiciona la accesibilidad de esta función. |
 | UC-06 Eliminar cuenta | UR-03; FR-020 | NFR-010 G | FR-020 permite eliminar la cuenta. NFR-010 condiciona la accesibilidad de esta función. |
