@@ -225,19 +225,36 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 **Identificador y nombre del caso de uso:** UC-05 — Actualizar perfil.
 
-**Objetivo:** Actualizar su propio perfil y conservar los cambios.
+**Objetivo:** Actualizar los datos personales, de contacto  y las preferencias del perfil propio
 
 **Participantes:** Actor Principal: Usuario registrado
 
 **Precondiciones:** 
+-El usuario dispone de una cuenta activa
+-El usuario tiene una sesión iniciada
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** El usuario registrado indica al sistema que quiere modificar los datos de su perfil.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:** 
+1.El usuario registrado indica al sistema que quiere modificar los datos de su perfil.
+2.El sistema muestra al usuario registrado los valores actuales de los datos de su perfil distinguiendo los que puede modificar de los que no.
+3.El usuario registrado modifica los datos permitidos.
+4.El usuario registrado solicita al sistema guardar los cambios.
+5.El usuario comprueba los datos según las reglas indicadas en el acta.
+6.El sistema guarda conjuntamente los cambios en el perfil.
+7.El sistema confirma la actualización.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):** 
+**5.a.Falta un dato obligatorio o un dato no cumple su formato.**
+1.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+-*.a.El usuario cancela antes de guardar
+-
+
+**6.a.El sistema no puede guardar**
+
+
+**Postcondiciones:** En caso de éxito el perfil contiene los datos guardados y el usuario recibe confirmación de ello.
 
 **Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
 
