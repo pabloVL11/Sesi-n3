@@ -227,19 +227,19 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 **Objetivo:** Actualizar los datos personales, de contacto  y las preferencias del perfil propio
 
-**Participantes:** Actor Principal: Usuario registrado
+**Participantes:** Actor Principal: Usuario registrado. No se identifican actores secundarios.
 
 **Precondiciones:** 
 -El usuario dispone de una cuenta activa
 -El usuario tiene una sesión iniciada
 
-**Inicio:** El usuario registrado indica al sistema que quiere modificar los datos de su perfil.
+**Inicio:** El usuario indica al sistema que quiere modificar los datos de su perfil.
 
 **Escenario principal de éxito:** 
-1.El usuario registrado indica al sistema que quiere modificar los datos de su perfil.
+1.El usuario indica al sistema que quiere modificar los datos de su perfil.
 2.El sistema muestra al usuario registrado los valores actuales de los datos de su perfil distinguiendo los que puede modificar de los que no.
-3.El usuario registrado modifica los datos permitidos.
-4.El usuario registrado solicita al sistema guardar los cambios.
+3.El usuario modifica los datos permitidos.
+4.El usuario solicita al sistema guardar los cambios.
 5.El usuario comprueba los datos según las reglas indicadas en el acta.
 6.El sistema guarda conjuntamente los cambios en el perfil.
 7.El sistema confirma la actualización.
@@ -262,21 +262,80 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** UC-21 — Buscar recetas
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Buscar y localizar una receta que cumpla los criterios seleccionados y consultar su detalle.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** Actor Principal: Usuario registrado. No se identifican actores secundarios.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:**
+-El usuario dispone de una cuenta activa
+-El usuario tiene una sesión iniciada
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** El usuario indica al sistema que desea iniciar una búsqueda.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:** 
+1.El usuario indica al sistema que desea iniciar una búsqueda.
+2.El sistema permite introducir los criterios de búsqueda.
+3.El usuario introduce los criterios de búsqueda.
+4.El usuario confirma la búsqueda.
+5.El sistema comprueba los criterios de búsqueda.
+6.El sistema obtiene los resultados de la búsqueda de la base de datos.
+7.El sistema muestra la vista previa de los resultados de recetas coincidentes con los criterios de búsqueda.
+8.El usuario selecciona uno de los resultados.
+9.El sistema muestra al usuario el detalle de la receta seleccionada.
+10.El caso de uso finaliza.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):** 
+**6.b.El usuario no introdujo ningún criterio de búsqueda**
+1.El sistema informa al usuario de que debe introducir al menos un criterio.
+2.El flujo de eventos vuelve al paso 2 para añadir criterios de búsqueda.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+**6.b.El usuario introdujo el mismo ingrediente como incluido y excluido**
+1.El sistema informa al usuario de el conflicto entre los criterios seleccionados.
+2.El flujo de eventos vuelve al paso 2 para modificar los criterios.
+
+**6.c.Ninguna receta cumple los criterios de búsqueda**
+1.El sistema indica al usuario que no hay ningún resultado disponible para los criterios indicados.
+2.El sistema sugiere al usuario posibles correcciones ortográficas.
+3.El flujo de eventos vuelve al paso 2 para modificar los criterios.
+
+**6.c.2.a.No se identifican posibles correcciones ortográficas**
+1.El sistema sugiere al usuario posibles modificaciones en los ingredientes incluidos.
+2.El flujo de eventos vuelve al paso 2 para modificar los criterios.
+
+**6.c.2.b.No se dispone de sugerencias**
+1.El sistema indica al usuario que no se dispone de sugerencias para cambiar los criterios de búsqueda.
+2.El flujo de eventos vuelve al paso 2 para modificar los criterios.
+
+**6.d.La búsqueda falla**
+1.El sistema indica al usuario que se ha producido un error durante la búsqueda.
+2.El flujo de eventos vuelve al paso 4 para volver a realizar la búsqueda.
+
+**7.a.Alguno de los resultados no tiene imagen**
+1.El sistema indica al usuario cuales de los resultados no tienen una imagen en su vista previa.
+2.El flujo de eventos continúa en el paso 5.
+
+**7.b.Alguno de los resultados no tiene valoraciones**
+1.El sistema indica al usuario cuales de los resultados no tienen valoraciones en su vista previa.
+2.El flujo de eventos continúa en el paso 5.
+
+**9.a.El usuario decide volver a los resultados de la búsqueda**
+1.El flujo de eventos vuelve al paso 4 para permitir al usuario seleccionar otra receta con los mismos criterios.
+
+**9.a.1.a.El usuario decide hacer otra búsqueda**
+1.El flujo de eventos vuelve al paso 2 manteniendo los criterios de la búsqueda actual para permitir al usuario modificarlos.
+
+-*.a.El usuario decide terminar la búsqueda
+-
+1.El caso de uso finaliza sin realizar una búsqueda.
+
+**Postcondiciones:** 
+**Tras completar el caso de uso con éxito:**
+-Se muestra la receta seleccionada completa al usuario
+
+**Si el caso de uso termina sin éxito o se cancela:**
+-No se realiza ninguna búsqueda
 
 **Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
 
