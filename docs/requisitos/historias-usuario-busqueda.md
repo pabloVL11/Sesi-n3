@@ -15,54 +15,55 @@
 
 ## Épica de búsqueda
 
-Como usuario registrado, quiero realizar una búsqueda filtrada de recetas, para localizar una receta que cumpla mis criterios y consultar su detalle..
+Como usuario registrado, quiero realizar una búsqueda de recetas mediante palabras clave, ingredientes seleccionados e ingredientes excluidos, para localizar una receta que cumpla mis criterios y consultar su detalle.
 
 **Estado:** descompuesta en US-01, US-02 y US-03. Conserva la necesidad conjunta.
 
 ## Justificación de la división
 
-[Justificación de los resultados útiles que separa la división.]
+La división se realiza en base a los 3 criterios posibles para realizar la búsqueda de recetas. Cada una produce resultados de búsqueda y se pueden combinar.
+
 
 ## US-01
 
-**Título:** [Capacidad]
+**Título:** Buscar recetas mediante palabras clave
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario registrado, quiero introducir palabras clave como criterio de búsqueda, para encontrar recetas relacionadas a las palabras clave que me interesan.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-85; acta, apartado 2.
 
 ### Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-01.** Dado que haya una receta publicada con la palabra "calabacín" en el título o descripción, cuado el usuario realiza una búsqueda mediante la palabra "calabacín", entonces esta receta se mostrará entre los resultados de la búsqueda.
+- **CA-02.** Dado que haya una receta publicada con las palabras "arroz integral" en su título o descripción y otras que contengan unicamente "arroz" o "integral", cuando el usuario realiza una búsqueda mediante la palabra "arroz integral", entonces solo la primera se mostrará entre los resultados de la búsqueda.
+- **CA-03.** Dado que no haya ninguna receta publicada que contenga las palabras "huevos cocidos", cuando el usuario realiza una búsqueda mediante las palabras clave "huevos cocidos", entonces se informará al usuario de que no hay ninguna receta publicada conforme a ese criterio y no se realizará la búsqueda, conservando los criterios.
 
 ## US-02
 
-**Título:** [Capacidad]
+**Título:** Buscar recetas mediante ingredientes contenidos
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario registrado, quiero introducir ingredientes usados en una receta como criterio de búsqueda, para encontrar recetas que contengan los ingredientes que me interesan.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-86; acta, apartado 2.
 
 ### Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-01.** Dado que haya una receta publicada que use calabacín como ingrediente, cuando el usuario realiza una búsqueda incluyendo calabacín en los ingredientes deseados, entonces esta receta se mostrará entre los resultados de la búsqueda.
+- **CA-02.**  Dado que haya una receta publicada que use calabacín como ingrediente, cuando el usuario realiza una búsqueda incluyendo calabacín y arroz en los ingredientes deseados, entonces esta receta no se mostrará entre los resultados de la búsqueda.
+- **CA-03.** Dado que no haya ninguna receta publicada que use calabacín como ingrediente, cuando el usuario realiza una búsqueda incluyendo calabacín en los ingredientes deseados, entonces se informará al usuario de que no hay ninguna receta publicada conforme a ese criterio y no se realizará la búsqueda, conservando los criterios
 
 ## US-03
 
-**Título:** [Capacidad]
+**Título:** Buscar recetas mediante ingredientes excluidos
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario registrado, quiero excluir ingredientes usados en una receta como criterio de búsqueda, para encontrar recetas que no contengan ingredientes que no quiero utilizar.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+**Fuentes:** UR-08; UC-21; FR-87; acta, apartado 2.
 
 ### Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
+- **CA-01.** Dado que haya una receta publicada que use calabacín como ingrediente, cuando el usuario realiza una búsqueda excluyendo calabacín de los ingredientes deseados, entonces esta receta no se mostrará entre los resultados de la búsqueda.
+- **CA-02.** Dado que haya una receta publicada que use calabacín y arroz como ingredientes y recetas que solo contienen arroz, cuando el usuario realiza una búsqueda excluyendo calabacín de los ingredientes deseados, entonces solo las recetas que contienen únicamente arroz se mostrarán entre los resultados de la búsqueda.
 - **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
 
 ## Revisión INVEST
