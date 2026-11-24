@@ -8,6 +8,7 @@ Modelos y diagramas propios del Proyecto Simbiosis (por ejemplo, modelos de domi
 | --- | --- |
 | [Plantilla del modelo de casos de uso](plantilla-modelo-casos-de-uso.md) | Estructura e instrucciones reutilizables, que se conservan sin cumplimentar. |
 | [Modelo de casos de uso](modelo-casos-de-uso.md) | Documento de trabajo que incorpora los resultados de E1 y se amplía y revisa en las iteraciones siguientes. |
+| [Modelo de dominio](modelo-dominio.md) | Documento de trabajo que incorpora los diagramas de clase resultado del análisis textual |
 
 Cada modelo nuevo debe añadirse a esta carpeta en Markdown (o como diagrama embebido en Markdown) y listarse en la tabla anterior.
 
